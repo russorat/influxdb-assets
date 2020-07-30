@@ -31,7 +31,8 @@ jobs:
         wget https://dl.influxdata.com/platform/nightlies/influx_nightly_linux_amd64.tar.gz
         tar xvfz influx_nightly_linux_amd64.tar.gz
         sudo cp influx_nightly_linux_amd64/influx /usr/local/bin/
-        chmod +x $GITHUB_WORKSPACE/install.sh
-        $GITHUB_WORKSPACE/install.sh prod
+        cd $GITHUB_WORKSPACE
+        chmod +x ./install.sh
+        ./install.sh prod
         
         
