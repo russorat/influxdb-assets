@@ -49,7 +49,7 @@ if [ -z "$TASKS_STACK_ID" ]; then
 fi
 
 BASE_PATH="file://$(pwd)"
-if [ "$INFLUX_URL" == *"cloud2.influxdata.com"* ]; then
+if [[ $INFLUX_URL =~ "cloud2.influxdata.com" ]]; then
     BASE_PATH="https://github.com/russorat/influxdb-gitops/blob/master"
 fi
 
