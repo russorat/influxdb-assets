@@ -268,5 +268,5 @@ spec:
         width: 2
         xPos: 9
         yPos: 5
-    name: Welcome To CI Dude
+    name: Downsampling Status
     description: A dashboard for monitoring your downsampling tasks
