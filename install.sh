@@ -15,8 +15,12 @@ else
     if [ -z "$ENV_EXISTS" ]; then
         echo "Successfully set config profile to $1..."
     else
-        echo "Config profile $1 not found. Exiting."
-        exit 1
+        if [ -z "$INFLUX_TOKEN" ]; then
+            echo "Config profile $1 not found and no way to create it. Exiting."
+            exit 1
+        else
+            influx config create -n $1 -u $INFLUX_URL -o $INFLUX_ORG -t $INFLUX_TOKEN -a
+        fi
     fi
     CONFIG_PROFILE=$1
 fi
