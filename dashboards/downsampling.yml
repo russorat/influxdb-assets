@@ -268,5 +268,5 @@ spec:
         width: 2
         xPos: 9
         yPos: 5
-    name: Downsampling Status
+    name: Downsampling Status Part II
     description: A dashboard for monitoring your downsampling tasks
