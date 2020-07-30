@@ -22,5 +22,5 @@ echo $INFLUX_URL
 INFLUX_TOKEN=$(influx auth list --json | jq -r '.[].token')
 INFLUX_ORG=$(influx org list --json | jq -r '.[].name')
 TELEGRAF_ID=$(influx telegrafs --json | jq -r '.[].id')
-TELEGRAF_URL=$INFLUX_URL"/api/v2/telegrafs/$TELEGRAF_ID"
-INFLUX_TOKEN=$INFLUX_TOKEN INFLUX_ORG=$INFLUX_ORG telegraf --config $TELEGRAF_URL
+TELEGRAF_URL=$INFLUX_URL"api/v2/telegrafs/$TELEGRAF_ID"
+INFLUX_URL=$INFLUX_URL INFLUX_TOKEN=$INFLUX_TOKEN INFLUX_ORG=$INFLUX_ORG telegraf --config $TELEGRAF_URL
