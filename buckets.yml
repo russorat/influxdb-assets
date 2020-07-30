@@ -6,4 +6,4 @@ spec:
     name: telegraf
     retentionRules:
         - type: expire
-          everySeconds: 2592000
+          everySeconds: 2591999
