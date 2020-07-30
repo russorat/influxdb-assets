@@ -4,3 +4,6 @@ metadata:
     name: telegraf-bucket
 spec:
     name: telegraf
+    retentionRules:
+        - type: expire
+          everySeconds: 2592000
