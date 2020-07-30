@@ -7,7 +7,8 @@ if [ -z "$1" ]; then
     echo "No env supplied, assuming local (default)"
     echo "Checking if this instance has been set up..."
     IS_SETUP=$(influx config ls --json)
-    if [ -z "$IS_SETUP" ]; then
+    if [ "$IS_SETUP" == "{}" ]; then
+        echo "Setting up local instance..."
         influx setup -f -b telegraf -o influxdata -u russ -p something
     fi
 else
@@ -79,3 +80,5 @@ do
 done
 eval "influx stacks update --stack-id $TASKS_STACK_ID -n tasks $TASK_FILES"
 influx apply --force true --stack-id $TASKS_STACK_ID -q
+
+echo All stacks set up successfully. Login at $INFLUX_URL
