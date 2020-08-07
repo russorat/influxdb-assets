@@ -3,7 +3,7 @@ kind: Dashboard
 metadata:
     name: telegraf
 spec:
-    name: telegraf
+    name: telegraf is super cool
     charts:
       - colors:
           - hex: '#00C9FF'
