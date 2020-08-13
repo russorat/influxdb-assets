@@ -51,7 +51,7 @@ fi
 
 BASE_PATH="file://$(pwd)"
 if [[ $INFLUX_URL =~ "cloud2.influxdata.com" ]]; then
-    BASE_PATH="https://github.com/russorat/influxdb-gitops/blob/master"
+    BASE_PATH="https://github.com/$GITHUB_REPO/blob/$GITHUB_BRANCH"
 fi
 
 influx stacks update --stack-id $BUCKETS_STACK_ID -n buckets --template-url $BASE_PATH/buckets.yml
