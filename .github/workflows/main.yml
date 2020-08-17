@@ -6,10 +6,7 @@ name: deploy-to-cloud
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
-  workflow_dispatch:
-  schedule:
-  - cron: "0 2 * * 1-5"
+    branches: [ blog-post ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -36,7 +33,5 @@ jobs:
         tar xvfz influx_nightly_linux_amd64.tar.gz
         sudo cp influx_nightly_linux_amd64/influx /usr/local/bin/
         cd $GITHUB_WORKSPACE
-        chmod +x ./install.sh
-        ./install.sh prod
-        
-        
+        chmod +x ./install_v3.sh
+        ./install_v3.sh prod
