@@ -35,5 +35,8 @@ jobs:
         tar xvfz influx_nightly_linux_amd64.tar.gz
         sudo cp influx_nightly_linux_amd64/influx /usr/local/bin/
         cd $GITHUB_WORKSPACE
+        pwd
+        ls
+        git status
         chmod +x ./install_v3.sh
         ./install_v3.sh prod
